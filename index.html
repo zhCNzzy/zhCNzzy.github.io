@@ -1,1 +1,239 @@
-
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的粉色生活博客</title>
+    <style>
+        /* 全局样式 */
+        :root {
+            --primary-pink: #ffb6c1;  /* 浅粉色 */
+            --dark-pink: #db7093;     /* 中粉色 */
+            --light-pink: #fff0f5;    /* 淡粉色 */
+            --text-color: #333;       /* 正文文字颜色 */
+            --white: #fff;           /* 白色 */
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-pink);
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--dark-pink);
+            transition: all 0.3s ease;
+        }
+        
+        a:hover {
+            color: var(--primary-pink);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* 头部样式 */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: var(--dark-pink);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            font-weight: 500;
+            padding: 5px 0;
+            position: relative;
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--dark-pink);
+            transition: width 0.3s ease;
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        /* 主要内容区 */
+        main {
+            padding: 40px 0;
+            min-height: 70vh;
+        }
+        
+        .blog-intro {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .blog-intro h1 {
+            font-size: 36px;
+            color: var(--dark-pink);
+            margin-bottom: 15px;
+        }
+        
+        .blog-intro p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .content-placeholder {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+        
+        .content-placeholder h2 {
+            color: var(--dark-pink);
+            margin-bottom: 20px;
+        }
+        
+        .content-placeholder p {
+            margin-bottom: 30px;
+        }
+        
+        /* 页脚样式 */
+        footer {
+            background-color: var(--dark-pink);
+            color: var(--white);
+            padding: 30px 0;
+            text-align: center;
+        }
+        
+        .social-links {
+            margin: 20px 0;
+        }
+        
+        .social-links a {
+            color: var(--white);
+            margin: 0 10px;
+            font-size: 20px;
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+            }
+            
+            .logo {
+                margin-bottom: 15px;
+            }
+            
+            nav ul li {
+                margin-left: 15px;
+            }
+            
+            .blog-intro h1 {
+                font-size: 28px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">粉色日记</div>
+                <nav>
+                    <ul>
+                        <li><a href="#">首页</a></li>
+                        <li><a href="#">关于我</a></li>
+                        <li><a href="#">生活随笔</a></li>
+                        <li><a href="#">旅行日记</a></li>
+                        <li><a href="#">联系我</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+            <div class="blog-intro">
+                <h1>欢迎来到我的粉色小天地</h1>
+                <p>这里记录着我的生活点滴、旅行见闻和日常思考</p>
+            </div>
+            
+            <div class="content-placeholder">
+                <h2>这里是你的内容区域</h2>
+                <p>你可以在这里添加你的博客文章、照片或其他任何你想分享的内容</p>
+                <p>这个模板使用了柔和的粉色背景，白色内容卡片，营造温馨可爱的氛围</p>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-weibo"></i></a>
+                <a href="#"><i class="fab fa-weixin"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+            <p class="copyright">© 2023 粉色日记. 保留所有权利.</p>
+        </div>
+    </footer>
+</body>
+</html>
