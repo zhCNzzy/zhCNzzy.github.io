@@ -169,3 +169,30 @@ document.addEventListener('DOMContentLoaded', function() {
     // 初始化显示所有照片
     filterPhotos('all');
 });
+// js/photography.js
+
+// 图片分类筛选功能
+document.addEventListener('DOMContentLoaded', function() {
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const photoItems = document.querySelectorAll('.photo-item');
+    
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            // 更新活动按钮
+            filterBtns.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            
+            const category = this.dataset.category;
+            
+            // 过滤照片
+            photoItems.forEach(item => {
+                if (category === 'all' || item.dataset.category === category) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    });
+});
+
