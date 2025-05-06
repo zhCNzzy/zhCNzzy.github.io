@@ -1,24 +1,165 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
     <meta charset="UTF-8">
-    <title>摄影作品</title>
-    <!-- 外部样式表 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>摄影作品 - 我的博客</title>
     <link rel="stylesheet" href="css/style.css">
-    <!-- 内部样式表 -->
-    <style>
-        /* 页面特有的样式 */
-        .page-title {
-            color: #4d4dff;
-            text-align: center;
-        }
-    </style>
+    <link rel="stylesheet" href="css/photography.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <h1 class="page-title" style="margin-bottom: 20px;">我的摄影作品</h1>
-    <!-- 内容 -->
+    <header class="main-header">
+        <div class="container">
+            <div class="branding">
+                <h1><a href="index.html">暗夜随笔</a></h1>
+                <p class="subtitle">用镜头记录世界的瞬间</p>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="#">生活随笔</a></li>
+                    <li class="active"><a href="photography.html">摄影作品</a></li>
+                    <li><a href="about.html">关于我</a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+    <main class="container photography-page">
+        <section class="gallery-intro">
+            <h1>我的摄影作品</h1>
+            <p>每一张照片都是时光的标本，记录着我眼中的世界</p>
+        </section>
+
+        <div class="gallery-controls">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">全部作品</button>
+                <button class="filter-btn" data-filter="nature">自然风光</button>
+                <button class="filter-btn" data-filter="urban">城市建筑</button>
+                <button class="filter-btn" data-filter="portrait">人像摄影</button>
+                <button class="filter-btn" data-filter="street">街头纪实</button>
+            </div>
+            <div class="search-box">
+                <input type="text" placeholder="搜索照片..." id="search-input">
+                <button id="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+
+        <section class="photo-gallery">
+            <!-- 自然风光 -->
+            <div class="photo-item nature" data-title="晨曦山脉" data-date="2023-05-12" data-tags="自然 山脉 日出">
+                <img src="images/photos/nature1.jpg" alt="晨曦山脉">
+                <div class="photo-overlay">
+                    <h3>晨曦山脉</h3>
+                    <p>2023年5月 · 自然风光</p>
+                    <button class="view-btn">查看大图</button>
+                </div>
+            </div>
+            
+            <!-- 城市建筑 -->
+            <div class="photo-item urban" data-title="都市黄昏" data-date="2023-06-18" data-tags="城市 建筑 黄昏">
+                <img src="images/photos/urban1.jpg" alt="都市黄昏">
+                <div class="photo-overlay">
+                    <h3>都市黄昏</h3>
+                    <p>2023年6月 · 城市建筑</p>
+                    <button class="view-btn">查看大图</button>
+                </div>
+            </div>
+            
+            <!-- 人像摄影 -->
+            <div class="photo-item portrait" data-title="街头艺人" data-date="2023-07-22" data-tags="人像 艺术 表演">
+                <img src="images/photos/portrait1.jpg" alt="街头艺人">
+                <div class="photo-overlay">
+                    <h3>街头艺人</h3>
+                    <p>2023年7月 · 人像摄影</p>
+                    <button class="view-btn">查看大图</button>
+                </div>
+            </div>
+            
+            <!-- 街头纪实 -->
+            <div class="photo-item street" data-title="雨中行人" data-date="2023-08-05" data-tags="街头 雨天 纪实">
+                <img src="images/photos/street1.jpg" alt="雨中行人">
+                <div class="photo-overlay">
+                    <h3>雨中行人</h3>
+                    <p>2023年8月 · 街头纪实</p>
+                    <button class="view-btn">查看大图</button>
+                </div>
+            </div>
+            
+            <!-- 更多照片示例... -->
+            <div class="photo-item nature" data-title="湖畔秋色" data-date="2023-09-15" data-tags="自然 湖泊 秋天">
+                <img src="images/photos/nature2.jpg" alt="湖畔秋色">
+                <div class="photo-overlay">
+                    <h3>湖畔秋色</h3>
+                    <p>2023年9月 · 自然风光</p>
+                    <button class="view-btn">查看大图</button>
+                </div>
+            </div>
+            
+            <div class="photo-item urban" data-title="现代美术馆" data-date="2023-10-03" data-tags="城市 建筑 现代">
+                <img src="images/photos/urban2.jpg" alt="现代美术馆">
+                <div class="photo-overlay">
+                    <h3>现代美术馆</h3>
+                    <p>2023年10月 · 城市建筑</p>
+                    <button class="view-btn">查看大图</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 图片详情模态框 -->
+        <div class="modal" id="image-modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <img src="" alt="" id="modal-image">
+                <div class="image-info">
+                    <h2 id="image-title"></h2>
+                    <p class="image-meta">
+                        <span id="image-date"></span>
+                        <span id="image-category"></span>
+                    </p>
+                    <p id="image-desc"></p>
+                    <div class="image-tags" id="image-tags"></div>
+                </div>
+                <div class="modal-nav">
+                    <button id="prev-btn"><i class="fas fa-chevron-left"></i> 上一张</button>
+                    <button id="next-btn">下一张 <i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-about">
+                <h3>暗夜随笔</h3>
+                <p>用文字和镜头记录生活的美好</p>
+            </div>
+            <div class="footer-links">
+                <h3>快速链接</h3>
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="#">生活随笔</a></li>
+                    <li><a href="photography.html">摄影作品</a></li>
+                    <li><a href="about.html">关于我</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h3>关注我</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-weixin"></i></a>
+                    <a href="#"><i class="fab fa-weibo"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="far fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 暗夜随笔. 保留所有权利.</p>
+        </div>
+    </footer>
+
+    <script src="js/photography.js"></script>
 </body>
 </html>
