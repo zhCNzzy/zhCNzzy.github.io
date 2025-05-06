@@ -488,6 +488,72 @@
            <div class="content-placeholder fade-in delay-2">
     <h2>娱乐时间 - 俄罗斯方块</h2>
     <p>工作之余，来玩会儿简约版的俄罗斯方块放松一下吧！</p>
+                  <script>
+document.addEventListener('DOMContentLoaded', function() {
+    // 游戏常量
+    const COLS = 10;
+    const ROWS = 20;
+    const BLOCK_SIZE = 30;
+    const NEXT_PIECE_SIZE = 4;
+    
+    // 游戏变量
+    let canvas, ctx;
+    let nextCanvas, nextCtx;
+    let board = [];
+    let piece = null;
+    let nextPiece = null;
+    let score = 0;
+    let level = 1;
+    let gameInterval = null;
+    let dropInterval = 1000; // 初始下落速度(毫秒)
+    let isGameOver = false;
+    let isPaused = false;
+    
+    // 方块形状和颜色
+    const SHAPES = [
+        { shape: [[1, 1, 1, 1]], color: '#00FFFF' },  // I
+        { shape: [[1, 1], [1, 1]], color: '#FFFF00' }, // O
+        { shape: [[0, 1, 0], [1, 1, 1]], color: '#AA00FF' }, // T
+        { shape: [[1, 1, 0], [0, 1, 1]], color: '#FF0000' }, // Z
+        { shape: [[0, 1, 1], [1, 1, 0]], color: '#00FF00' }, // S
+        { shape: [[1, 0, 0], [1, 1, 1]], color: '#0000FF' }, // L
+        { shape: [[0, 0, 1], [1, 1, 1]], color: '#FF7F00' }  // J
+    ];
+    
+    // 初始化游戏
+    function init() {
+        canvas = document.createElement('canvas');
+        canvas.width = COLS * BLOCK_SIZE;
+        canvas.height = ROWS * BLOCK_SIZE;
+        ctx = canvas.getContext('2d');
+        document.getElementById('tetris-board').appendChild(canvas);
+        
+        // 初始化游戏板
+        createBoard();
+        
+        // 创建下一个方块预览
+        createNextPiecePreview();
+        
+        // 生成第一个方块和下一个方块
+        piece = generatePiece();
+        nextPiece = generatePiece();
+        
+        // 事件监听
+        document.addEventListener('keydown', control);
+        document.getElementById('start-btn').addEventListener('click', startGame);
+        
+        // 绘制初始状态
+        draw();
+        drawNextPiece();
+    }
+    
+    // [这里插入所有其他函数，保持完整代码结构]
+    // 注意：由于代码较长，请确保包含完整的JavaScript代码
+    
+    // 初始化游戏
+    init();
+});
+</script>
     
     <div class="tetris-container">
         <div class="tetris-board" id="tetris-board"></div>
@@ -599,72 +665,7 @@
             window.addEventListener('load', checkFade);
         });
     </script>
-    <script>
-document.addEventListener('DOMContentLoaded', function() {
-    // 游戏常量
-    const COLS = 10;
-    const ROWS = 20;
-    const BLOCK_SIZE = 30;
-    const NEXT_PIECE_SIZE = 4;
-    
-    // 游戏变量
-    let canvas, ctx;
-    let nextCanvas, nextCtx;
-    let board = [];
-    let piece = null;
-    let nextPiece = null;
-    let score = 0;
-    let level = 1;
-    let gameInterval = null;
-    let dropInterval = 1000; // 初始下落速度(毫秒)
-    let isGameOver = false;
-    let isPaused = false;
-    
-    // 方块形状和颜色
-    const SHAPES = [
-        { shape: [[1, 1, 1, 1]], color: '#00FFFF' },  // I
-        { shape: [[1, 1], [1, 1]], color: '#FFFF00' }, // O
-        { shape: [[0, 1, 0], [1, 1, 1]], color: '#AA00FF' }, // T
-        { shape: [[1, 1, 0], [0, 1, 1]], color: '#FF0000' }, // Z
-        { shape: [[0, 1, 1], [1, 1, 0]], color: '#00FF00' }, // S
-        { shape: [[1, 0, 0], [1, 1, 1]], color: '#0000FF' }, // L
-        { shape: [[0, 0, 1], [1, 1, 1]], color: '#FF7F00' }  // J
-    ];
-    
-    // 初始化游戏
-    function init() {
-        canvas = document.createElement('canvas');
-        canvas.width = COLS * BLOCK_SIZE;
-        canvas.height = ROWS * BLOCK_SIZE;
-        ctx = canvas.getContext('2d');
-        document.getElementById('tetris-board').appendChild(canvas);
-        
-        // 初始化游戏板
-        createBoard();
-        
-        // 创建下一个方块预览
-        createNextPiecePreview();
-        
-        // 生成第一个方块和下一个方块
-        piece = generatePiece();
-        nextPiece = generatePiece();
-        
-        // 事件监听
-        document.addEventListener('keydown', control);
-        document.getElementById('start-btn').addEventListener('click', startGame);
-        
-        // 绘制初始状态
-        draw();
-        drawNextPiece();
-    }
-    
-    // [这里插入所有其他函数，保持完整代码结构]
-    // 注意：由于代码较长，请确保包含完整的JavaScript代码
-    
-    // 初始化游戏
-    init();
-});
-</script>
+ 
 
 </body>
 </html>
