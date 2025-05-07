@@ -1,0 +1,147 @@
+/* css/about.css */
+
+/* 关于我页面特有样式 */
+.about-container {
+    display: flex;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.profile-section {
+    flex: 1;
+    background-color: var(--secondary-color);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(77, 77, 255, 0.1);
+    text-align: center;
+}
+
+.profile-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 20px;
+    border: 3px solid var(--accent-color);
+}
+
+.profile-section h2 {
+    color: var(--white);
+    margin-bottom: 15px;
+}
+
+.profile-section p {
+    color: var(--light-text);
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+.skills-section {
+    flex: 2;
+    background-color: var(--secondary-color);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(77, 77, 255, 0.1);
+}
+
+.skills-section h2 {
+    color: var(--white);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--accent-color);
+}
+
+.skill-category {
+    margin-bottom: 30px;
+}
+
+.skill-category h3 {
+    color: var(--white);
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.skill-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.skill-item {
+    background-color: rgba(77, 77, 255, 0.1);
+    color: var(--white);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.skill-item:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+.timeline {
+    margin-top: 40px;
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 30px;
+}
+
+.timeline-item:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 5px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+}
+
+.timeline-item:after {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 20px;
+    bottom: -30px;
+    width: 1px;
+    background-color: var(--accent-color);
+}
+
+.timeline-item:last-child:after {
+    display: none;
+}
+
+.timeline-date {
+    color: var(--accent-color);
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.timeline-title {
+    color: var(--white);
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.timeline-description {
+    color: var(--light-text);
+    line-height: 1.6;
+}
+
+/* 响应式设计 */
+@media (max-width: 992px) {
+    .about-container {
+        flex-direction: column;
+    }
+    
+    .profile-section, .skills-section {
+        flex: none;
+    }
+}
