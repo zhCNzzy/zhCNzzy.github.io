@@ -1,0 +1,151 @@
+.page-intro {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.page-intro h1 {
+    font-size: 42px;
+    color: var(--white);
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(77, 77, 255, 0.3);
+}
+
+.page-intro p {
+    font-size: 18px;
+    color: var(--light-text);
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+/* 联系表单样式 */
+.contact-container {
+    display: flex;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.contact-info {
+    flex: 1;
+    background-color: var(--secondary-color);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(77, 77, 255, 0.1);
+}
+
+.contact-form {
+    flex: 2;
+    background-color: var(--secondary-color);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(77, 77, 255, 0.1);
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 25px;
+}
+
+.contact-icon {
+    font-size: 24px;
+    color: var(--accent-color);
+    margin-right: 15px;
+    margin-top: 3px;
+}
+
+.contact-details h3 {
+    color: var(--white);
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+.contact-details p, .contact-details a {
+    color: var(--light-text);
+    font-size: 16px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--light-text);
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px 15px;
+    background-color: #2a2a2a;
+    border: 1px solid #444;
+    border-radius: 4px;
+    color: var(--text-color);
+    font-family: inherit;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+textarea.form-control {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.submit-btn {
+    background-color: var(--accent-color);
+    color: var(--white);
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #3a3aff;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(77, 77, 255, 0.3);
+}
+
+/* 社交链接 */
+.social-links-contact {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.social-links-contact a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(77, 77, 255, 0.1);
+    color: var(--white);
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+.social-links-contact a:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(77, 77, 255, 0.3);
+}
+
+/* 响应式设计 */
+@media (max-width: 992px) {
+    .contact-container {
+        flex-direction: column;
+    }
+}
