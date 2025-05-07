@@ -26,3 +26,22 @@ document.addEventListener('DOMContentLoaded', function() {
                 window.scrollTo({
                     top: targetElement.offsetTop - 80,
                     behavior: '
+
+       // 滚动动画
+    const fadeElements = document.querySelectorAll('.fade-in');
+    
+    function checkFade() {
+        fadeElements.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+            
+            if (elementTop < windowHeight - 100) {
+                element.style.opacity = '1';
+                element.style.transform = 'translateY(0)';
+            }
+        });
+    }
+    
+    window.addEventListener('scroll', checkFade);
+    window.addEventListener('load', checkFade);
+});
